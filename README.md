@@ -1,9 +1,19 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# To-Do List
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+To-Do List is a simple to-do list app that allows the user to create tasks and set their importance, mark them as completed or not completed, and remove them from the list. The app will track the date an individual task was added and completion status, and all tasks are stored on a database until deleted by the user.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+## Screen Shot
+
+![App Screenshot](screenshot.jpeg)
+
+## Built With
+
+HTML 5, CSS 3, Javascript, jQuery 3.5, Bootstrap 5, Node.js, Express, PostgreSQL
+
+## Acknowledgement
+Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality.
+
+## Support
+If you have suggestions or issues, please email me at dunnmj42@gmail.com
