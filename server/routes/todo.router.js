@@ -23,7 +23,11 @@ todoRouter.post("/", (req, res) => {
   console.log(`Adding task`, newTask);
 
   let queryText = `INSERT INTO "todo" ("task", "timeAdded", "isImportant")
-                       VALUES ($1, current_timestamp, $2);`;
+                       VALUES ($1, current_timestamp, $2);`; 
+                       // I couldn't get current_timestamp to provide an actual 
+                       // time instead of just the current date. I had a cool 
+                       // plan for a feature that I couldn't add because I 
+                       // couldn't get this working.
   pool
     .query(queryText, [req.body.task, req.body.isImportant])
     .then((result) => {
@@ -34,6 +38,8 @@ todoRouter.post("/", (req, res) => {
       res.sendStatus(500);
     });
 });
+// I'm not sure if passing current_timestamp directly is a security risk or not.
+// I don't think it is, because it's not taking user input.
 
 // PUT
 todoRouter.put("/:id", (req, res) => {
