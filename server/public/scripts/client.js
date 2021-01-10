@@ -118,6 +118,7 @@ function renderTasks(tasks) {
     for (let i = 0; i < tasks.length; i++) {
         let task = tasks[i];
         let $tr = $("<tr></tr>");
+        let dateAdded = new Date(task.timeAdded).toLocaleDateString('en-us')
 
         if(task.isComplete) {
             $tr = $(`<tr class="table-success"></tr>`);
@@ -125,7 +126,7 @@ function renderTasks(tasks) {
 
         $tr.data("task", task);
         $tr.append(`<td>${task.task}</td>`);
-        $tr.append(`<td>${task.timeAdded}</td>`);
+        $tr.append(`<td>${dateAdded}</td>`);
         if(task.isImportant) {
             $tr.append(`<td>Important</td>`);
         } else {
