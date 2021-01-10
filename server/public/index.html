@@ -1,61 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-Do List</title>
     <script src="./vendors/jquery-3.5.1.min.js"></script>
     <script src="./scripts/client.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="./vendors/bootstrap.css">
-    <link rel="stylesheet" href="./styles/style.css">
-</head>
-<body class="bg-secondary">
+    <link rel="stylesheet" href="./vendors/bootstrap.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body class="bg-secondary">
     <div class="container card jumbotron">
-        <h1><img src="./images/TodoList.svg" alt="To-Do List image" width="100px">To-Do List</h1>
+      <h1>
+        <img
+          src="./images/TodoList.svg"
+          alt="To-Do List image"
+          width="100px"
+        />To-Do List
+      </h1>
     </div>
     <div class="container card jumbotron">
-        <div>
-            <form>
-                <div class="row">
-                    <div class="col">
-                        <input type="text" class="form-control" id="taskIn" placeholder="Task To-Do">
-                    </div>
-                    <div class="col">
-                        <select class="form-select" id="isImportant">
-                            <option value="" disabled selected>Select Importance</option>
-                            <option value="false">Not Important</option>
-                            <option value="true">Important</option>
-                        </select>
-                    </div>
-                    <div class="col">
-                        <button type="submit" id="addTaskBtn" class="btn btn-primary">Submit Task</button>
-                    </div>
-                </div>
-            </form>
-        </div>
+      <div>
+        <form>
+          <div class="row">
+            <div class="col">
+              <input
+                type="text"
+                class="form-control"
+                id="taskIn"
+                placeholder="Task To-Do"
+              />
+            </div>
+            <div class="col">
+              <select class="form-select" id="isImportant">
+                <option value="" disabled selected>Select Importance</option>
+                <option value="false">Not Important</option>
+                <option value="true">Important</option>
+              </select>
+            </div>
+            <div class="col">
+              <button type="submit" id="addTaskBtn" class="btn btn-primary">
+                Submit Task
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
     <div class="container card jumbotron">
-        <h2>To-Do:</h2>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">Task</th>
-                    <th scope="col">Date Added</th>
-                    <th scope="col">Importance</th>
-                    <th scope="col">Complete</th>
-                    <th scope="col">Remove</th>
-                </tr>
-            </thead>
-            <tbody id="taskOutput"></tbody>
-        </table>
+      <h2>To-Do:</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Task</th>
+            <th scope="col">Date Added</th>
+            <th scope="col">Importance</th>
+            <th scope="col">Complete</th>
+            <th scope="col">Remove</th>
+          </tr>
+        </thead>
+        <tbody id="taskOutput"></tbody>
+      </table>
     </div>
     <div>
-        <footer class="appFooter bg-light">
-            <div class="container">
-                <span class="text-muted">&copy;2021 To-Do Inc. </span>
-            </div>
-        </footer>
+      <footer class="appFooter bg-light">
+        <div class="container">
+          <span class="text-muted">&copy;2021 To-Do Inc. </span>
+        </div>
+      </footer>
     </div>
-</body>
+  </body>
 </html>
