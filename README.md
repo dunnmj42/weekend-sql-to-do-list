@@ -13,7 +13,7 @@ To-Do List is a simple to-do list app that allows the user to create tasks and s
 HTML 5, CSS 3, Javascript, jQuery 3.5, Bootstrap 5, Node.js, Express, PostgreSQL
 
 ## Acknowledgement
-Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality.
+Thanks to [Prime Digital Academy](http://www.primeacademy.io) who equipped and helped me to make this application a reality.
 
 ## Support
 If you have suggestions or issues, please email me at dunnmj42@gmail.com
