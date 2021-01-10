@@ -8,6 +8,7 @@ function onReady() {
 
 // CLICK LISTENERS AND OBJECT ASSEMBLY
 function setupClickListeners() {
+    $("#taskOutput").on("click", ".markComplete", markComplete);
     $("#taskOutput").on("click", ".removeBtn", removeButton);
     $("#addTaskBtn").on("click", function() {
       console.log("addTaskBtn click");
