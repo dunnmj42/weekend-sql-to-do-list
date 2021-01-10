@@ -128,11 +128,11 @@ function renderTasks(tasks) {
             $tr.append(`<td>Not Important</td>`);
         }
         if(task.isComplete) {
-            $tr.append(`<td><button class="markComplete">Mark Not Complete</button></td>`);
+            $tr.append(`<td><button class="btn btn-warning markComplete">Mark Not Complete</button></td>`);
         } else {
-            $tr.append(`<td><button class="markComplete">Mark Complete</button></td>`);
+            $tr.append(`<td><button class="btn btn-success markComplete">Mark Complete</button></td>`);
         }
-        $tr.append(`<td><button class="removeBtn">Remove</button></td>`);
+        $tr.append(`<td><button class="btn btn-danger removeBtn">Remove</button></td>`);
         $("#taskOutput").append($tr);
     }
 }
