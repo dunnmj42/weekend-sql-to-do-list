@@ -6,7 +6,7 @@ To-Do List is a simple to-do list app that allows the user to create tasks and s
 
 ## Screen Shot
 
-![App Screenshot](screenshot.jpeg)
+![App Screenshot](Screenshot.jpeg)
 
 ## Built With
 
