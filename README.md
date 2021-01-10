@@ -2,7 +2,7 @@
 
 ## Description
 
-To-Do List is a simple to-do list app that allows the user to create tasks and set their importance, mark them as completed or not completed, and remove them from the list. The app will track the date an individual task was added and completion status, and all tasks are stored on a database until deleted by the user.
+To-Do List is a simple to-do list app that allows the user to create tasks and set their importance, mark them as completed or not completed, and remove them from the list. The app will track the date an individual task was added and completion status, and all tasks are stored on a database until deleted by the user. Completed tasks will have a green background, and a yellow button to re-mark them as not complete.
 
 ## Screen Shot
 
