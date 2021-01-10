@@ -10,35 +10,52 @@
     <link rel="stylesheet" href="./vendors/bootstrap.css">
     <link rel="stylesheet" href="./styles/style.css">
 </head>
-<body>
-    <div>
-        <h1>To-Do List</h1>
+<body class="bg-secondary">
+    <div class="container card jumbotron">
+        <h1><img src="./images/TodoList.svg" alt="To-Do List image" width="100px">To-Do List</h1>
     </div>
-    <div>
-        <form>
-            <input type="text" id="taskIn" placeholder="Task To Do">
-            <select id="isImportant">
-                <option value=""></option>
-                <option value="false">Not Important</option>
-                <option value="true">Important</option>
-            </select>
-            <button type="submit" id="addTaskBtn">Submit</button>
-        </form>
+    <div class="container card jumbotron">
+        <div>
+            <form>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" id="taskIn" placeholder="Task To-Do">
+                    </div>
+                    <div class="col">
+                        <select class="form-select" id="isImportant">
+                            <option value="" disabled selected>Select Importance</option>
+                            <option value="false">Not Important</option>
+                            <option value="true">Important</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <button type="submit" id="addTaskBtn" class="btn btn-primary">Submit Task</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-    <div>
+    <div class="container card jumbotron">
         <h2>To-Do:</h2>
-        <table>
+        <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Task</th>
-                    <th>Date Added</th>
-                    <th>Importance</th>
-                    <th>Complete</th>
-                    <th>Remove</th>
+                    <th scope="col">Task</th>
+                    <th scope="col">Date Added</th>
+                    <th scope="col">Importance</th>
+                    <th scope="col">Complete</th>
+                    <th scope="col">Remove</th>
                 </tr>
             </thead>
             <tbody id="taskOutput"></tbody>
         </table>
+    </div>
+    <div>
+        <footer class="appFooter bg-light">
+            <div class="container">
+                <span class="text-muted">&copy;2021 To-Do Inc. </span>
+            </div>
+        </footer>
     </div>
 </body>
 </html>

@@ -118,21 +118,26 @@ function renderTasks(tasks) {
     for (let i = 0; i < tasks.length; i++) {
         let task = tasks[i];
         let $tr = $("<tr></tr>");
+        let dateAdded = new Date(task.timeAdded).toLocaleDateString('en-us')
+
+        if(task.isComplete) {
+            $tr = $(`<tr class="table-success"></tr>`);
+        }; // Set row color on complete
 
         $tr.data("task", task);
         $tr.append(`<td>${task.task}</td>`);
-        $tr.append(`<td>${task.timeAdded}</td>`);
+        $tr.append(`<td>${dateAdded}</td>`);
         if(task.isImportant) {
             $tr.append(`<td>Important</td>`);
         } else {
             $tr.append(`<td>Not Important</td>`);
         }
         if(task.isComplete) {
-            $tr.append(`<td><button class="markComplete">Mark Not Complete</button></td>`);
+            $tr.append(`<td><button class="btn btn-warning markComplete">Mark Not Complete</button></td>`);
         } else {
-            $tr.append(`<td><button class="markComplete">Mark Complete</button></td>`);
+            $tr.append(`<td><button class="btn btn-success markComplete">Mark Complete</button></td>`);
         }
-        $tr.append(`<td><button class="removeBtn">Remove</button></td>`);
+        $tr.append(`<td><button class="btn btn-danger removeBtn">Remove</button></td>`);
         $("#taskOutput").append($tr);
     }
 }
