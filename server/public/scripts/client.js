@@ -118,9 +118,10 @@ function renderTasks(tasks) {
     for (let i = 0; i < tasks.length; i++) {
         let task = tasks[i];
         let $tr = $("<tr></tr>");
+
         if(task.isComplete) {
             $tr = $(`<tr class="table-success"></tr>`);
-        };
+        }; // Set row color on complete
 
         $tr.data("task", task);
         $tr.append(`<td>${task.task}</td>`);
