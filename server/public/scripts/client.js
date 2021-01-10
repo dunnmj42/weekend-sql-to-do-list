@@ -8,6 +8,7 @@ function onReady() {
 
 // CLICK LISTENERS AND OBJECT ASSEMBLY
 function setupClickListeners() {
+    $("#taskOutput").on("click", ".removeBtn", removeButton);
     $("#addTaskBtn").on("click", function() {
       console.log("addTaskBtn click");
   
@@ -52,6 +53,44 @@ function getTasks() {
     });
 }
 
+// DELETE
+function removeButton() {
+    console.log("clicked remove");
+    swal({
+      title: "Are you sure?",
+      text: "Once removed, you will not be able to recover this Task!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        ajaxDelete();
+        swal("Task Removed!", {
+          icon: "success",
+        });
+      } else {
+        swal("Task not removed!");
+      }
+    });
+  
+    const task = $(this).closest("tr").data("task").id;
+    console.log(task);
+  
+    // delete function being passed to router
+    function ajaxDelete() {
+      $.ajax({
+        type: "DELETE",
+        url: `/todo/${task}`,
+      })
+        .then(function (response) {
+          getTasks();
+        })
+        .catch(function (error) {
+          alert("error in delete");
+        });
+    }
+}
+
 // Render to DOM
 function renderTasks(tasks) {
     for (let i = 0; i < tasks.length; i++) {
@@ -67,9 +106,9 @@ function renderTasks(tasks) {
             $tr.append(`<td>Not Important</td>`);
         }
         if(task.isComplete) {
-            $tr.append(`<td>Complete</td>`);
+            $tr.append(`<td><button class="markComplete">Mark Not Complete</button></td>`);
         } else {
-            $tr.append(`<td>Not Complete</td>`);
+            $tr.append(`<td><button class="markComplete">Mark Complete</button></td>`);
         }
         $tr.append(`<td><button class="removeBtn">Remove</button></td>`);
         $("#taskOutput").append($tr);

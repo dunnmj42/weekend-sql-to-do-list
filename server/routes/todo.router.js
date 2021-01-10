@@ -15,9 +15,9 @@ todoRouter.get("/", (req, res) => {
         console.log(error);
         res.sendStatus(500);
       });
-  });
+});
 
-  // POST
+// POST  
 todoRouter.post("/", (req, res) => {
     let newTask = req.body;
     console.log(`Adding task`, newTask);
@@ -35,6 +35,19 @@ todoRouter.post("/", (req, res) => {
         console.log(`Error adding new task`, error);
         res.sendStatus(500);
       });
-  });
+});
+
+// DELETE
+todoRouter.delete("/:id", (req, res) => {
+    let task = req.params.id;
+    console.log("Delete route called for task ", task);
+  
+    const queryText = `DELETE FROM "todo"
+                        WHERE "id" = $1;`;
+  
+    pool.query(queryText, [task]).then((results) => {
+      res.sendStatus(204);
+    });
+});
 
   module.exports = todoRouter;
