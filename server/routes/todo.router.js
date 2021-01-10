@@ -37,6 +37,36 @@ todoRouter.post("/", (req, res) => {
       });
 });
 
+// PUT
+todoRouter.put("/:id", (req, res) => {
+    let isComplete = req.body.isComplete;
+    let id = req.params.id;
+    let queryText;
+  
+    console.log(isComplete);
+  
+    if (isComplete === "false") {
+      queryText = `UPDATE "todo"
+                  SET "isComplete" = true
+                  WHERE "id" = $1;`;
+    } else if (isComplete === "true") {
+      queryText = `UPDATE "todo"
+                  SET "isComplete" = false
+                  WHERE "id" = $1;`;
+    }
+  
+    console.log(`Updating task with ${id}, setting isComplete to:`, isComplete);
+  
+    pool.query(queryText, [id])
+      .then((result) => {
+        res.sendStatus(200);
+      })
+      .catch((error) => {
+        console.log(error);
+        res.sendStatus(200);
+      });
+});
+
 // DELETE
 todoRouter.delete("/:id", (req, res) => {
     let task = req.params.id;

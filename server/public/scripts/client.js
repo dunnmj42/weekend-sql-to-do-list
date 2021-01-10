@@ -54,6 +54,27 @@ function getTasks() {
     });
 }
 
+// PUT
+function markComplete() {
+    console.log("clicked markComplete");
+  
+    let task = $(this).closest("tr").data("task");
+    console.log(task);
+  
+    $.ajax({
+      type: "PUT",
+      url: `/todo/${task.id}`,
+      data: task,
+    })
+      .then(function (response) {
+        console.log("Updated");
+        getTasks();
+      })
+      .catch(function (error) {
+        alert("error updating status");
+      });
+}
+
 // DELETE
 function removeButton() {
     console.log("clicked remove");
